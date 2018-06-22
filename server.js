@@ -43,6 +43,12 @@ function handleEvent(event) {
     case "ค้นหางาน" :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
+    case "ตำแหน่ง" :
+      client.replyMessage(event.replyToken, {
+        'type': 'text',
+        'text': 'line://app/1589205932-WXbBEMXB'
+      })
+      break
   }
 
   // create a echoing text message
