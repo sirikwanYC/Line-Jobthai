@@ -56,7 +56,7 @@ function handleEvent(event) {
                 text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
                 actions: [
                   { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                  { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง เชฟ' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
                 ],
               },
               {
@@ -64,7 +64,7 @@ function handleEvent(event) {
                 text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
                 actions: [
                   { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                  { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
                 ],
               },
             ]
