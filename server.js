@@ -49,7 +49,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, 
         { type: 'text', text: 'คุณชื่ออะไร(เช่น ชื่อ...)' }
       )
-    } else if(myNamePatt.test(text)) {
+    } else if (myNamePatt.test(text)) {
       const genderTemplate = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -135,6 +135,102 @@ function handleEvent(event) {
               }
             },
           )
+        case 'สายงาน IT':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'ซ่อมบำรุง',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดซ่อมบำรุง ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=ซ่อมบำรุง' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง ซ่อมบำรุง' },
+                    ],
+                  },
+                  {
+                    title: 'ซ่อมคอม',
+                    text: 'CM-CITY ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=ซ่อมคอม' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง ซ่อมคอม' },
+                    ],
+                  },
+                ]
+              }
+            },
+          )
+        case 'สายงาน Art':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'จิตรกร',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักวาดรูป ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=จิตรกร' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง จิตรกร' },
+                    ],
+                  }
+                ]
+              }
+            },
+          )
+        case 'สายงาน Science':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'นักวิทยาศาสตร์',
+                    text: 'โรงแรมหนองป่าหอย ต้องการนักวิทยาศาสตร์ ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=นักวิทยาศาสตร์' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง นักวิทยาศาสตร์' },
+                    ],
+                  }
+                ]
+              }
+            },
+          )
+        case 'สายงาน Engineer':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'วิศวะโยธา',
+                    text: 'โรงแรมหนองป่าหอย ต้องการวิศวะโยธา ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=วิศวะโยธา' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง วิศวะโยธา' },
+                    ],
+                  },
+                  {
+                    title: 'วิศวะไฟฟ้า',
+                    text: 'Ritha การช่าง ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=วิศวะไฟฟ้า' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง วิศวะไฟฟ้า' },
+                    ],
+                  },
+                ]
+              }
+            },
+          )
         case 'เลือกสายงาน':
           return client.replyMessage(event.replyToken,
             {
@@ -183,7 +279,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 1,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน IT"
                           }
                         },
@@ -197,7 +293,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 2,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Art"
                           }
                         },
@@ -211,7 +307,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 2,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Science"
                           }
                         },
@@ -225,7 +321,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 1,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Engineer"
                           }
                         }
