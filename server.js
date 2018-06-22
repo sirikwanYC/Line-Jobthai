@@ -60,7 +60,6 @@ function handleEvent(event) {
                 ],
               },
               {
-                thumbnailImageUrl: buttonsImageURL,
                 title: 'hoge',
                 text: 'fuga',
                 actions: [
