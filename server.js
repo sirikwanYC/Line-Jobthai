@@ -40,14 +40,14 @@ function handleEvent(event) {
   }
   const { text } = event.message
   const findJobPatt = /สมัครงาน ตำแหน่ง/
-  const myNamePatt = /ฉันชื่อ|ชื่อ|นาย|นาง|นางสาว/
+  const myNamePatt = /ชื่อ/ 
   const genderPatt = /ฉันเพศ/
   const agePatt = /ฉันอายุ/
 
-  if (text) {
-    if (findJobPatt.test(text)) {
-      return client.replyMessage(event.replyToken,
-        { type: 'text', text: 'คุณชื่ออะไร' }
+  if(text) {
+    if(findJobPatt.test(text)) {
+      return client.replyMessage(event.replyToken, 
+        { type: 'text', text: 'คุณชื่ออะไร(เช่น ชื่อ...)' }
       )
     } else if (myNamePatt.test(text)) {
       const genderTemplate = {
@@ -333,7 +333,7 @@ function handleEvent(event) {
             }
           )
         default:
-          const echo = { type: 'text', text: event.message.text };
+          const echo = { type: 'text', text: 'กรุณาใช้ข้อความให้ถูกรูปแบบ' };
           return client.replyMessage(event.replyToken, echo);
       }
     }
