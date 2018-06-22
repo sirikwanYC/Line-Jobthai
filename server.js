@@ -12,6 +12,9 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
+app.set('views', __dirname + '/views')
+app.engine('html', require('ejs').renderFile)
+
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
@@ -23,6 +26,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 });
+
+app.get('/job-info', (req, res) => {
+  res.render('index.html')
+})
 
 // event handler
 function handleEvent(event) {

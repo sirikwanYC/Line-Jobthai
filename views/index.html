@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Jobthai Liff application
+        </title>
+        <meta charset="UTF-8"/>
+        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+        <script>
+            liff.init(data => {
+                    // Now you can call LIFF API
+                    const userId = data.context.userId;
+                },
+                err => {
+                    // LIFF initialization failed
+                }
+                )
+        </script>
+    </head>
+    <body>
+        <h1>ข้อมูลตำแหน่ง : เชฟ</h1>
+        <div>
+            ทำอาหารเป็นก็พอแล้ว
+        </div>
+        <button>สมัครเลย</button>
+    </body>
+</html>
