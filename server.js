@@ -78,8 +78,8 @@ function handleEvent(event) {
           "baseUrl": "https://www.thinknet.co.th",
           "altText": "This is an imagemap",
           "baseSize": {
-            "height": 1040,
-            "width": 1040
+            "height": 460,
+            "width": 460
           },
           "actions": [
             {
@@ -88,18 +88,18 @@ function handleEvent(event) {
               "area": {
                 "x": 0,
                 "y": 0,
-                "width": 520,
-                "height": 1040
+                "width": 230,
+                "height": 460
               }
             },
             {
               "type": "message",
               "text": "Hello-2",
               "area": {
-                "x": 520,
+                "x": 230,
                 "y": 0,
-                "width": 520,
-                "height": 1040
+                "width": 230,
+                "height": 460
               }
             }
           ]
