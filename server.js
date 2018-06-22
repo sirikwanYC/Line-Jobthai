@@ -39,12 +39,12 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  switch(event.message.text){
-    case "ค้นหางาน" :
+  switch (event.message.text) {
+    case "ค้นหางาน":
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
-    case 'สายงาน บริการ' :
-      return client.replyMessage(event.replyToken, 
+    case 'สายงาน บริการ':
+      return client.replyMessage(event.replyToken,
         {
           type: 'template',
           altText: 'ตำแหน่งงานที่ต้องการ',
@@ -71,41 +71,45 @@ function handleEvent(event) {
           },
         }
       )
-    case 'เลือกตำแหน่งงาน' :
-      return client.replyMessage(event.replyToken, 
+    case 'เลือกตำแหน่งงาน':
+      return client.replyMessage(event.replyToken,
         {
-          "type": "bubble",
-          "header": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "เลือกประเภทงานโดนใจ",
-                "weight": "bold",
-                "color": "#aaaaaa",
-                "size": "lg"
-              }
-            ]
+          "type": "imagemap",
+          "baseUrl": "https://example.com/bot/images/rm001",
+          "altText": "This is an imagemap",
+          "baseSize": {
+            "height": 1040,
+            "width": 1040
           },
-          "hero": {
-            "type": "image",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "aspectMode": "cover",
-            "action": {
+          "actions": [
+            {
               "type": "uri",
-              "uri": "http://linecorp.com/"
+              "linkUri": "https://example.com/",
+              "area": {
+                "x": 0,
+                "y": 0,
+                "width": 520,
+                "height": 1040
+              }
+            },
+            {
+              "type": "message",
+              "text": "Hello",
+              "area": {
+                "x": 520,
+                "y": 0,
+                "width": 520,
+                "height": 1040
+              }
             }
-          }
+          ]
         }
       )
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
   }
-  
+
   return client.replyMessage(event.replyToken, echo)
 }
 
