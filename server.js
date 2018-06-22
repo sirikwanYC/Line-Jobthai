@@ -41,11 +41,13 @@ function handleEvent(event) {
 
   switch(event.message.text){
     case 'สมัครงาน ตำแหน่ง':
-      const message = { type: 'text', text: 'คุณชื่ออะไร' }
-      return client.replyMessage(event.replyToken, message)
+      return client.replyMessage(event.replyToken, 
+        { type: 'text', text: 'คุณชื่ออะไร' }
+      )
     case 'ฉันชื่อ':
-      const message = { type: 'text', text: 'คุณเพศอะไร' }
-      return client.replyMessage(event.replyToken, message)
+      return client.replyMessage(event.replyToken,
+        { type: 'text', text: 'คุณเพศอะไร' }
+      )
     case 'ค้นหางาน' :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
