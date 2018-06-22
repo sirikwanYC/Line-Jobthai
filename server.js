@@ -75,10 +75,7 @@ function handleEvent(event) {
           actions: [
             { label: '18-25', type: 'message', text: 'ฉันอายุ 18-25' },
             { label: '26-30', type: 'message', text: 'ฉันอายุ 26-30' },
-            { label: '31-35', type: 'message', text: 'ฉันอายุ 31-35' },
-            { label: '36-40', type: 'message', text: 'ฉันอายุ 36-40' },
-            { label: '41-50', type: 'message', text: 'ฉันอายุ 41-50' },
-            { label: '51-60', type: 'message', text: 'ฉันอายุ 51-60' }
+            { label: '31-35', type: 'message', text: 'ฉันอายุ 31-35' }
         ]
         },
       }
