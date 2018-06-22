@@ -153,7 +153,7 @@ function handleEvent(event) {
   // }
 
   // use reply API
-  return client.replyMessage(event.replyToken, flex)
+  return client.replyMessage(event.replyToken, echo)
   // switch(event.message.text){
   //   case "ค้นหางาน" :
   //     console.log('ทำแล้วไม่อยากย้ายทีมเลย')
