@@ -134,7 +134,6 @@ function handleEvent(event) {
                       { label: 'IT', type: 'message', text: 'สมัครงาน สายงาน IT' },
                       { label: 'Art', type: 'message', text: 'สมัครงาน สายงาน Art' },
                       { label: 'Engineer', type: 'message', text: 'สมัครงาน สายงาน Engineer' },
-                      { label: 'Science', type: 'message', text: 'สมัครงาน สายงาน Science' },
                     ]
                   },
                 ]
