@@ -122,23 +122,26 @@ function handleEvent(event) {
         case 'เลือกสายงาน':
           return client.replyMessage(event.replyToken,
             {
-              type: 'template',
-              altText: 'ตำแหน่งงานที่ต้องการ',
-              template: {
-                type: 'carousel',
-                columns: [
-                  {
-                    title: 'เลือกสายงานที่ต้องการ',
-                    text: 'เลือกเลย',
-                    actions: [
-                      { label: 'IT', type: 'message', text: 'สมัครงาน สายงาน IT' },
-                      { label: 'Art', type: 'message', text: 'สมัครงาน สายงาน Art' },
-                      { label: 'Engineer', type: 'message', text: 'สมัครงาน สายงาน Engineer' },
-                    ]
-                  },
-                ]
+              type: 'flex',
+              altText: 'This is flex',
+              contents: {
+                type: 'bubble',
+                body: {
+                  type: 'box',
+                  layout: 'horizontal',
+                  contents: [
+                    {
+                      type: 'text',
+                      text: 'hello'
+                    },
+                    {
+                      type: 'text',
+                      text: 'hello'
+                    }
+                  ]
+                }
               }
-            },
+            }
           )
         default:
           const echo = { type: 'text', text: event.message.text };
