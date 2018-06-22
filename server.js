@@ -3,7 +3,7 @@ const express = require('express')
 
 const config = {
     channelAccessToken: "GJ0DUnzqhbWDQu3zXVwKD9NcH2l6vMQSuSvp90UKm4WxNFky4tXiWYJ7YodSbQpvrysMUBWcY2WRkjwzYxKqZI9nHLEqTNv6VNz4Xc3uWJPpE5ZesKlcRwNpBvBqY7Ols2Jnl8x5gKK7Khtrh0p5XgdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "7e2ec436f2fbb41bc5b8e93577a59de",
+    channelSecret: "7e2ec436f2fbb41bc5b8e93577a59dec",
 }
   // create LINE SDK client
 const client = new line.Client(config);
