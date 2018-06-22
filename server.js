@@ -62,7 +62,7 @@ function handleEvent(event) {
     case 'ค้นหางาน' :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
-    case 'สายงาน บริการ':
+    case 'สายงาน บริการ' || 'สายงานที่แนะนำ':
       return client.replyMessage(event.replyToken,
         {
           type: 'template',
