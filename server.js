@@ -39,12 +39,12 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  switch(event.message.text){
-    case "ค้นหางาน" :
+  switch (event.message.text) {
+    case "ค้นหางาน":
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
-    case 'สายงาน บริการ' :
-      return client.replyMessage(event.replyToken, 
+    case 'สายงาน บริการ':
+      return client.replyMessage(event.replyToken,
         {
           type: 'template',
           altText: 'ตำแหน่งงานที่ต้องการ',
@@ -71,39 +71,45 @@ function handleEvent(event) {
           },
         }
       )
-    case 'เลือกตำแหน่งงาน' :
-      return client.replyMessage(event.replyToken, 
+    case 'เลือกตำแหน่งงาน':
+      return client.replyMessage(event.replyToken,
         {
-          type: 'template',
-          altText: 'Buttons alt text',
-          template: {
-            type: 'carousel',
-            columns: [
-              {
-                title: 'เชฟ',
-                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
-                ],
-              },
-              {
-                title: 'คนทอดหมู',
-                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
-                ],
-              },
-            ]
+          "type": "imagemap",
+          "baseUrl": "https://example.com/bot/images/rm001",
+          "altText": "This is an imagemap",
+          "baseSize": {
+            "height": 1040,
+            "width": 1040
           },
+          "actions": [
+            {
+              "type": "uri",
+              "linkUri": "https://example.com/",
+              "area": {
+                "x": 0,
+                "y": 0,
+                "width": 520,
+                "height": 1040
+              }
+            },
+            {
+              "type": "message",
+              "text": "Hello",
+              "area": {
+                "x": 520,
+                "y": 0,
+                "width": 520,
+                "height": 1040
+              }
+            }
+          ]
         }
       )
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
   }
-  
+
   return client.replyMessage(event.replyToken, echo)
 }
 
