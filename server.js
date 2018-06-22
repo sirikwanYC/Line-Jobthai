@@ -122,36 +122,23 @@ function handleEvent(event) {
         case 'เลือกสายงาน':
           return client.replyMessage(event.replyToken,
             {
-              "type": "imagemap",
-              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg/1040",
-              "altText": "This is an imagemap",
-              "baseSize": {
-                  "height": 1040,
-                  "width": 1040
-              },
-              "actions": [
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
                   {
-                      "type": "uri",
-                      "linkUri": "https://example.com/",
-                      "area": {
-                          "x": 0,
-                          "y": 0,
-                          "width": 520,
-                          "height": 1040
-                      }
+                    title: 'เลือกสายงานที่ต้องการ',
+                    actions: [
+                      { label: 'IT', type: 'message', text: 'สมัครงาน สายงาน IT' },
+                      { label: 'Art', type: 'message', text: 'สมัครงาน สายงาน Art' },
+                      { label: 'Engineer', type: 'message', text: 'สมัครงาน สายงาน Engineer' },
+                      { label: 'Science', type: 'message', text: 'สมัครงาน สายงาน Science' },
+                    ]
                   },
-                  {
-                      "type": "message",
-                      "text": "Hello",
-                      "area": {
-                          "x": 520,
-                          "y": 0,
-                          "width": 520,
-                          "height": 1040
-                      }
-                  }
-              ]
-            }
+                ]
+              }
+            },
           )
         default:
           const echo = { type: 'text', text: event.message.text };
