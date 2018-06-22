@@ -93,35 +93,24 @@ function handleEvent(event) {
     case 'เลือกตำแหน่งงาน':
       return client.replyMessage(event.replyToken,
         {
-          "type": "imagemap",
-          "baseUrl": "./logo.jpg",
-          "altText": "This is an imagemap",
-          "baseSize": {
-            "height": 460,
-            "width": 460
-          },
-          "actions": [
-            {
-              "type": "message",
-              "text": "Hello-1",
-              "area": {
-                "x": 0,
-                "y": 0,
-                "width": 230,
-                "height": 460
-              }
-            },
-            {
-              "type": "message",
-              "text": "Hello-2",
-              "area": {
-                "x": 230,
-                "y": 0,
-                "width": 230,
-                "height": 460
-              }
+          type: 'template',
+          altText: 'ตำแหน่งงานที่ต้องการ',
+          template: {
+            type: 'bubble',
+            "header": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "เลือกประเภทงานโดนใจ",
+                  "weight": "bold",
+                  "color": "#aaaaaa",
+                  "size": "lg"
+                }
+              ]
             }
-          ]
+          }
         }
       )
     default:
