@@ -109,7 +109,7 @@ function handleEvent(event) {
           return client.replyMessage(event.replyToken,
             {
               "type": "imagemap",
-              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg",
+              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg/1040",
               "altText": "This is an imagemap",
               "baseSize": {
                   "height": 1040,
