@@ -83,8 +83,8 @@ function handleEvent(event) {
           },
           "actions": [
             {
-              "type": "uri",
-              "linkUri": "https://gitlab.thinknet.co.th/uploads/system/group/avatar/9/logo.jpg",
+              "type": "message",
+              "text": "Hello-1",
               "area": {
                 "x": 0,
                 "y": 0,
@@ -94,7 +94,7 @@ function handleEvent(event) {
             },
             {
               "type": "message",
-              "text": "Hello",
+              "text": "Hello-2",
               "area": {
                 "x": 520,
                 "y": 0,
