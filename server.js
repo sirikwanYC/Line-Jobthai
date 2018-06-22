@@ -48,6 +48,17 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณเพศอะไร' }
       )
+
+    case 'ฉันเพศ':
+      return client.replyMessage(event.replyToken,
+        { type: 'text', text: 'คุณอายุเท่าไหร่' }
+      )
+
+    case 'ฉันอายุ':
+      return client.replyMessage(event.replyToken,
+        { type: 'text', text: 'ขอบคุณครับ' }
+      )
+
     case 'ค้นหางาน' :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
