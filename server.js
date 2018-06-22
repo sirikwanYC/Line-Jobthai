@@ -109,7 +109,7 @@ function handleEvent(event) {
           return client.replyMessage(event.replyToken,
             {
               "type": "imagemap",
-              "baseUrl": "https://example.com/bot/images/rm001",
+              "baseUrl": "http://www.ientertain.in/wp-content/uploads/2016/04/Big-Magic.png",
               "altText": "This is an imagemap",
               "baseSize": {
                   "height": 1040,
