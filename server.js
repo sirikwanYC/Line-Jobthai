@@ -93,35 +93,92 @@ function handleEvent(event) {
     case 'เลือกตำแหน่งงาน':
       return client.replyMessage(event.replyToken,
         {
-          "type": "imagemap",
-          "baseUrl": "http://www.g21.com.au/sites/default/files/styles/img_half/public/field/image/jobs_stylised_representation.jpg?itok=hulV4ZMu",
-          "altText": "This is an imagemap",
-          "baseSize": {
-            "height": 460,
-            "width": 460
-          },
-          "actions": [
-            {
-              "type": "message",
-              "text": "Hello-1",
-              "area": {
-                "x": 0,
-                "y": 0,
-                "width": 230,
-                "height": 460
-              }
-            },
-            {
-              "type": "message",
-              "text": "Hello-2",
-              "area": {
-                "x": 230,
-                "y": 0,
-                "width": 230,
-                "height": 460
-              }
-            }
-          ]
+          type: 'template',
+          altText: 'ตำแหน่งงานที่ต้องการ',
+          template: {
+            
+              "type": "bubble",
+              "header": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เลือกประเภทงานโดนใจ",
+                    "weight": "bold",
+                    "color": "#aaaaaa",
+                    "size": "lg"
+                  }
+                ]
+              },
+              "hero": {
+                "type": "image",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "action": {
+                  "type": "uri",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              "body": {
+                "type": "box",
+                "layout": "horizontal",
+                "spacing": "md",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "flex": 2,
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "วิศวกรรมคอมพิวเตอร์",
+                        "gravity": "top",
+                        "size": "md",
+                        "flex": 1,
+                        "action": {
+                          "type": "uri",
+                          "uri": "http://linecorp.com/"
+                        }
+                      },
+                      {
+                        "type": "separator"
+                      },
+                      {
+                        "type": "text",
+                        "text": "Hay fever goes wild",
+                        "gravity": "center",
+                        "size": "md",
+                        "flex": 2
+                      },
+                      {
+                        "type": "separator"
+                      },
+                      {
+                        "type": "text",
+                        "text": "LINE Pay Begins Barcode Payment Service",
+                        "gravity": "center",
+                        "size": "md",
+                        "flex": 2
+                      },
+                      {
+                        "type": "separator"
+                      },
+                      {
+                        "type": "text",
+                        "text": "LINE Adds LINE Wallet",
+                        "gravity": "bottom",
+                        "size": "md",
+                        "flex": 1
+                      }
+                    ]
+                  }
+                ]
+              
+            } 
+          }
         }
       )
     default:
