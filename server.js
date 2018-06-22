@@ -72,10 +72,11 @@ function handleEvent(event) {
         }
       )
 
-    case 'เลือกตำแหน่งงาน' : 
+    case 'เลือกตำแหน่งงาน':
+    console.log('asdfsfasdf') 
     const flexMessages = {
-      "type": "bubble",
-      "header": {
+      type: "bubble",
+      header: {
         "type": "box",
         "layout": "horizontal",
         "contents": [
@@ -155,7 +156,7 @@ function handleEvent(event) {
         ]
       }
     }
-      return client.replyMessage(event.replyToken, flexMessages)
+    return client.replyMessage(event.replyToken, flexMessages)
       // return client.replyMessage(event.replyToken, {
       //   'type': 'text',
       //   'text': 'line://app/1589205932-WXbBEMXB'
