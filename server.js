@@ -65,9 +65,24 @@ function handleEvent(event) {
       }
       return client.replyMessage(event.replyToken, genderTemplate)
     } else if(genderPatt.test(text)) {
-      return client.replyMessage(event.replyToken,
-        { type: 'text', text: 'คุณอายุเท่าไหร่' }
-      )
+      const genderSex = {
+        type: 'template',
+        altText: 'Buttons alt text',
+        template: {
+          type: 'buttons',
+          title: "อายุ",
+          text: "กรุณาเลือกช่วงอายุของคุณ",
+          actions: [
+            { label: '18-25', type: 'message', text: 'ฉันอายุ 18-25' },
+            { label: '26-30', type: 'message', text: 'ฉันอายุ 26-30' },
+            { label: '31-35', type: 'message', text: 'ฉันอายุ 31-35' },
+            { label: '36-40', type: 'message', text: 'ฉันอายุ 36-40' },
+            { label: '41-50', type: 'message', text: 'ฉันอายุ 41-50' },
+            { label: '51-60', type: 'message', text: 'ฉันอายุ 51-60' }
+        ]
+        },
+      }
+      return client.replyMessage(event.replyToken, genderSex)
     } else if (agePatt.test(text)) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
@@ -77,7 +92,8 @@ function handleEvent(event) {
         case 'ค้นหางาน':
           console.log('ทำแล้วไม่อยากย้ายทีมเลย')
           break
-        case 'สายงาน บริการ' || 'สายงานที่แนะนำ':
+        case 'สายงานที่แนะนำ':
+        case 'สายงาน บริการ':
           return client.replyMessage(event.replyToken,
             {
               type: 'template',
