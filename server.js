@@ -128,6 +128,7 @@ function handleEvent(event) {
                 columns: [
                   {
                     title: 'เลือกสายงานที่ต้องการ',
+                    text: 'เลือกเลย',
                     actions: [
                       { label: 'IT', type: 'message', text: 'สมัครงาน สายงาน IT' },
                       { label: 'Art', type: 'message', text: 'สมัครงาน สายงาน Art' },
