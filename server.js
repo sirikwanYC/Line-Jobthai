@@ -32,17 +32,91 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  switch(event.message.text){
-    case "ค้นหางาน" :
-      console.log('ทำแล้วไม่อยากย้ายทีมเลย')
-      break
-  }
-
+  handleRichMenu(event.message.text)
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
 
+  const flex = {
+    "type": "bubble",
+    "header": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "text",
+          "text": "เลือกประเภทงานโดนใจ",
+          "weight": "bold",
+          "color": "#aaaaaa",
+          "size": "lg"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "http://linecorp.com/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "horizontal",
+      "spacing": "md",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "flex": 2,
+          "contents": [
+            {
+              "type": "text",
+              "text": "วิศวกรรมคอมพิวเตอร์",
+              "gravity": "top",
+              "size": "md",
+              "flex": 1
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "type": "text",
+              "text": "Hay fever goes wild",
+              "gravity": "center",
+              "size": "md",
+              "flex": 2
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "type": "text",
+              "text": "LINE Pay Begins Barcode Payment Service",
+              "gravity": "center",
+              "size": "md",
+              "flex": 2
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "type": "text",
+              "text": "LINE Adds LINE Wallet",
+              "gravity": "bottom",
+              "size": "md",
+              "flex": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+
   // use reply API
-  return client.replyMessage(event.replyToken, echo);
+  return client.replyMessage(event.replyToken, flex);
 }
 
 // listen on port
