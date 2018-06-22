@@ -14,6 +14,10 @@
                     // LIFF initialization failed
                 }
                 )
+            applyNow = () => {
+                liff.sendMessages('สมัครงาน ตำแหน่ง เชฟ')
+                liff.closeWindow()
+            }
         </script>
     </head>
     <body>
@@ -21,6 +25,6 @@
         <div>
             ทำอาหารเป็นก็พอแล้ว
         </div>
-        <button>สมัครเลย</button>
+        <button onclick="applyNow()">สมัครเลย</button>
     </body>
 </html>
