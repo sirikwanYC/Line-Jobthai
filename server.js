@@ -47,7 +47,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, 
         {
           type: 'template',
-          altText: 'รายหารงานที่สมัครได้',
+          altText: 'ตำแหน่งงานที่ต้องการ',
           template: {
             type: 'carousel',
             columns: [
