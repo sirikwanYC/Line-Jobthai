@@ -49,66 +49,25 @@ function handleEvent(event) {
           type: 'template',
           altText: 'Buttons alt text',
           template: {
-            type: "carousel",
-            contents: [
+            type: 'carousel',
+            columns: [
               {
-                type: "bubble",
-                body: {
-                  type: "box",
-                  layout: "horizontal",
-                  contents: [
-                    {
-                      type: "text",
-                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                      wrap: true
-                    }
-                  ]
-                },
-                footer: {
-                  type: "box",
-                  layout: "horizontal",
-                  contents: [
-                    {
-                      type: "button",
-                      style: "primary",
-                      action: {
-                        type: "uri",
-                        label: "Go",
-                        uri: "line://app/1589205932-WXbBEMXB"
-                      }
-                    }
-                  ]
-                }
+                title: 'hoge',
+                text: 'fuga',
+                actions: [
+                  { label: 'Go to line.me', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+                ],
               },
               {
-                type: "bubble",
-                body: {
-                  type: "box",
-                  layout: "horizontal",
-                  contents: [
-                    {
-                      type: "text",
-                      text: "Hello, World!",
-                      wrap: true
-                    }
-                  ]
-                },
-                footer: {
-                  type: "box",
-                  layout: "horizontal",
-                  contents: [
-                    {
-                      type: "button",
-                      style: "primary",
-                      action: {
-                        type: "uri",
-                        label: "Go",
-                        uri: "line://app/1589205932-WXbBEMXB"
-                      }
-                    }
-                  ]
-                }
-              }
+                thumbnailImageUrl: buttonsImageURL,
+                title: 'hoge',
+                text: 'fuga',
+                actions: [
+                  { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+                  { label: 'Say message', type: 'message', text: 'Rice=米' },
+                ],
+              },
             ]
           },
         }
