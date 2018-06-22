@@ -88,7 +88,7 @@ app.listen(port, () => {
       return client.replyMessage(event.replyToken,
         {
           "type": "imagemap",
-          // "baseUrl": "https://www.thinknet.co.th",
+          "baseUrl": "https://www.thinknet.co.th",
           "altText": "This is an imagemap",
           "baseSize": {
             "height": 1040,
