@@ -44,7 +44,7 @@ function handleEvent(event) {
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case "สายงาน บริการ" :
-      return client.replyMessage(event.replyToken, {
+      client.replyMessage(event.replyToken, {
         "type": "carousel",
         "contents": [
           {
@@ -85,6 +85,7 @@ function handleEvent(event) {
           }
         ]
       })
+      break
       // client.replyMessage(event.replyToken, {
       //   'type': 'text',
       //   'text': 'line://app/1589205932-WXbBEMXB'
