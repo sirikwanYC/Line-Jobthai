@@ -105,7 +105,7 @@ function handleEvent(event) {
               }
             },
           )
-        case 'เลือกตำแหน่งงาน':
+        case 'เลือกสายงาน':
           return client.replyMessage(event.replyToken,
             {
               "type": "imagemap",
