@@ -40,13 +40,13 @@ function handleEvent(event) {
   }
 
   switch(event.message.text){
-    case (event.message.text.indexOf('สมัครงาน ตำแหน่ง') !== -1) :
+    case 'สมัครงาน ตำแหน่ง':
       const message = { type: 'text', text: 'คุณชื่ออะไร' }
       return client.replyMessage(event.replyToken, message)
-    case (event.message.text.indexOf('ฉันชื่อ ') != --1) :
+    case 'ฉันชื่อ':
       const message = { type: 'text', text: 'คุณเพศอะไร' }
       return client.replyMessage(event.replyToken, message)
-    case "ค้นหางาน" :
+    case 'ค้นหางาน' :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case 'สายงาน บริการ':
