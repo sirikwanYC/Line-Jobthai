@@ -40,16 +40,16 @@ function handleEvent(event) {
   }
   const { text } = event.message
   const findJobPatt = /สมัครงาน ตำแหน่ง/
-  const myNamePatt = /ฉันชื่อ|ชื่อ|นาย|นาง|นางสาว/ 
+  const myNamePatt = /ฉันชื่อ|ชื่อ|นาย|นาง|นางสาว/
   const genderPatt = /ฉันเพศ/
   const agePatt = /ฉันอายุ/
 
-  if(text) {
-    if(findJobPatt.test(text)) {
-      return client.replyMessage(event.replyToken, 
+  if (text) {
+    if (findJobPatt.test(text)) {
+      return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
-    } else if(myNamePatt.test(text)) {
+    } else if (myNamePatt.test(text)) {
       const genderTemplate = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -64,7 +64,7 @@ function handleEvent(event) {
         },
       }
       return client.replyMessage(event.replyToken, genderTemplate)
-    } else if(genderPatt.test(text)) {
+    } else if (genderPatt.test(text)) {
       const genderSex = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -77,7 +77,7 @@ function handleEvent(event) {
             { label: '31-40', type: 'message', text: 'ฉันอายุ 31-40' },
             { label: '41-50', type: 'message', text: 'ฉันอายุ 41-50' },
             { label: '51-60', type: 'message', text: 'ฉันอายุ 51-60' }
-        ]
+          ]
         },
       }
       return client.replyMessage(event.replyToken, genderSex)
@@ -113,6 +113,102 @@ function handleEvent(event) {
                     actions: [
                       { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
                       { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                    ],
+                  },
+                ]
+              }
+            },
+          )
+        case 'สายงาน IT':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'ซ่อมบำรุง',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดซ่อมบำรุง ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=ซ่อมบำรุง' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง ซ่อมบำรุง' },
+                    ],
+                  },
+                  {
+                    title: 'ซ่อมคอม',
+                    text: 'CM-CITY ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=ซ่อมคอม' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง ซ่อมคอม' },
+                    ],
+                  },
+                ]
+              }
+            },
+          )
+        case 'สายงาน Art':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'จิตรกร',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักวาดรูป ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=จิตรกร' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง จิตรกร' },
+                    ],
+                  }
+                ]
+              }
+            },
+          )
+        case 'สายงาน Science':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'นักวิทยาศาสตร์',
+                    text: 'โรงแรมหนองป่าหอย ต้องการนักวิทยาศาสตร์ ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=นักวิทยาศาสตร์' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง นักวิทยาศาสตร์' },
+                    ],
+                  }
+                ]
+              }
+            },
+          )
+        case 'สายงาน Engineer':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'วิศวะโยธา',
+                    text: 'โรงแรมหนองป่าหอย ต้องการวิศวะโยธา ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=วิศวะโยธา' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง วิศวะโยธา' },
+                    ],
+                  },
+                  {
+                    title: 'วิศวะไฟฟ้า',
+                    text: 'Ritha การช่าง ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=วิศวะไฟฟ้า' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง วิศวะไฟฟ้า' },
                     ],
                   },
                 ]
