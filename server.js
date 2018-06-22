@@ -2,10 +2,10 @@ const line = require('@line/bot-sdk')
 const express = require('express')
 
 const config = {
-    channelAccessToken: "GJ0DUnzqhbWDQu3zXVwKD9NcH2l6vMQSuSvp90UKm4WxNFky4tXiWYJ7YodSbQpvrysMUBWcY2WRkjwzYxKqZI9nHLEqTNv6VNz4Xc3uWJPpE5ZesKlcRwNpBvBqY7Ols2Jnl8x5gKK7Khtrh0p5XgdB04t89/1O/w1cDnyilFU=",
-    channelSecret: "7e2ec436f2fbb41bc5b8e93577a59dec",
+  channelAccessToken: "GJ0DUnzqhbWDQu3zXVwKD9NcH2l6vMQSuSvp90UKm4WxNFky4tXiWYJ7YodSbQpvrysMUBWcY2WRkjwzYxKqZI9nHLEqTNv6VNz4Xc3uWJPpE5ZesKlcRwNpBvBqY7Ols2Jnl8x5gKK7Khtrh0p5XgdB04t89/1O/w1cDnyilFU=",
+  channelSecret: "7e2ec436f2fbb41bc5b8e93577a59dec",
 }
-  // create LINE SDK client
+// create LINE SDK client
 const client = new line.Client(config);
 
 // create Express app
@@ -30,6 +30,12 @@ function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
+  }
+
+  switch(event.message.text){
+    case "ค้นหางาน" :
+      console.log('ทำแล้วไม่อยากย้ายทีมเลย')
+      break
   }
 
   // create a echoing text message
