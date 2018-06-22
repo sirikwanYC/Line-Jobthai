@@ -47,7 +47,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, 
         {
           type: 'template',
-          altText: 'Buttons alt text',
+          altText: 'ตำแหน่งงานที่ต้องการ',
           template: {
             type: 'carousel',
             columns: [
