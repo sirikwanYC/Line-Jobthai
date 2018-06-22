@@ -39,9 +39,9 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  switch(event.message.text){
+  switch (event.message.text) {
     case 'สมัครงาน ตำแหน่ง':
-      return client.replyMessage(event.replyToken, 
+      return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
     case 'ฉันชื่อ':
@@ -59,7 +59,7 @@ function handleEvent(event) {
         { type: 'text', text: 'ขอบคุณครับ' }
       )
 
-    case 'ค้นหางาน' :
+    case 'ค้นหางาน':
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case 'สายงาน บริการ' || 'สายงานที่แนะนำ':
