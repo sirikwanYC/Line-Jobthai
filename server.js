@@ -71,7 +71,7 @@ function handleEvent(event) {
           },
         }
       )
-    case 'เลือกตำแหน่งงาน':
+    case 'เลือกตำแหน่งงาน' :
       // const flexMessages = {
       //   type: "bubble",
       //   header: {
