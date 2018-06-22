@@ -279,7 +279,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 1,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน IT"
                           }
                         },
@@ -293,7 +293,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 2,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Art"
                           }
                         },
@@ -307,7 +307,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 2,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Science"
                           }
                         },
@@ -321,7 +321,7 @@ function handleEvent(event) {
                           "size": "md",
                           "flex": 1,
                           "action": {
-                            "type": "text",
+                            "type": "message",
                             "text": "สายงาน Engineer"
                           }
                         }
