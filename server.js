@@ -12,6 +12,9 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
+app.set('views', __dirname + '/views')
+app.engine('html', require('ejs').renderFile)
+
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
@@ -23,6 +26,10 @@ app.post('/callback', line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 });
+
+app.get('/job-info', (req, res) => {
+  res.render('index.html')
+})
 
 // event handler
 function handleEvent(event) {
@@ -117,6 +124,62 @@ function handleEvent(event) {
 
   // use reply API
   return client.replyMessage(event.replyToken, flex);
+  // switch(event.message.text){
+  //   case "ค้นหางาน" :
+  //     console.log('ทำแล้วไม่อยากย้ายทีมเลย')
+  //     break
+  //   case "สายงาน บริการ" :
+  //     client.replyMessage(event.replyToken, {
+  //       "type": "carousel",
+  //       "contents": [
+  //         {
+  //           "type": "bubble",
+  //           "body": {
+  //             "type": "box",
+  //             "layout": "vertical",
+  //             "contents": [
+  //               {
+  //                 "type": "text",
+  //                 "text": "เชฟ"
+  //               },
+  //               {
+  //                 "type": "button",
+  //                 "action": {
+  //                   "type": "uri",
+  //                   "label": "ดูรายละเอียด",
+  //                   "uri": "line://app/1589205932-WXbBEMXB"
+  //                 },
+  //                 "style": "primary",
+  //                 "color": "#0000ff"
+  //               }
+  //             ]
+  //           }
+  //         },
+  //         {
+  //           "type": "bubble",
+  //           "body": {
+  //             "type": "box",
+  //             "layout": "vertical",
+  //             "contents": [
+  //               {
+  //                 "type": "text",
+  //                 "text": "อาชีพอื่นๆ (ยังคลิกไม่ได้นะจ้ะ)"
+  //               }
+  //             ]
+  //           }
+  //         }
+  //       ]
+  //     })
+  //     break
+  //     // client.replyMessage(event.replyToken, {
+  //     //   'type': 'text',
+  //     //   'text': 'line://app/1589205932-WXbBEMXB'
+  //     // })
+  //   default:
+  //     const echo = { type: 'text', text: event.message.text };
+  //     client.replyMessage(event.replyToken, echo);
+  //     break
+  // }
 }
 
 // listen on port
