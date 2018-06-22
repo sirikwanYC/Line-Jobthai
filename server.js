@@ -44,61 +44,55 @@ function handleEvent(event) {
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case "สายงาน บริการ" :
-      client.replyMessage(event.replyToken, {
-        "type": "carousel",
-        "contents": [
-          {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "เชฟ"
-                },
-                {
-                  "type": "button",
-                  "action": {
-                    "type": "uri",
-                    "label": "ดูรายละเอียด",
-                    "uri": "line://app/1589205932-WXbBEMXB"
-                  },
-                  "style": "primary",
-                  "color": "#0000ff"
-                }
-              ]
-            }
-          },
-          {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "อาชีพอื่นๆ (ยังคลิกไม่ได้นะจ้ะ)"
-                }
-              ]
-            }
-          }
-        ]
-      })
-      break
-      // client.replyMessage(event.replyToken, {
-      //   'type': 'text',
-      //   'text': 'line://app/1589205932-WXbBEMXB'
+      // return client.replyMessage(event.replyToken, {
+      //   "type": "carousel",
+      //   "contents": [
+      //     {
+      //       "type": "bubble",
+      //       "body": {
+      //         "type": "box",
+      //         "layout": "vertical",
+      //         "contents": [
+      //           {
+      //             "type": "text",
+      //             "text": "เชฟ"
+      //           },
+      //           {
+      //             "type": "button",
+      //             "action": {
+      //               "type": "uri",
+      //               "label": "ดูรายละเอียด",
+      //               "uri": "line://app/1589205932-WXbBEMXB"
+      //             },
+      //             "style": "primary",
+      //             "color": "#0000ff"
+      //           }
+      //         ]
+      //       }
+      //     },
+      //     {
+      //       "type": "bubble",
+      //       "body": {
+      //         "type": "box",
+      //         "layout": "vertical",
+      //         "contents": [
+      //           {
+      //             "type": "text",
+      //             "text": "อาชีพอื่นๆ (ยังคลิกไม่ได้นะจ้ะ)"
+      //           }
+      //         ]
+      //       }
+      //     }
+      //   ]
       // })
+      return client.replyMessage(event.replyToken, {
+        'type': 'text',
+        'text': 'line://app/1589205932-WXbBEMXB'
+      })
     default:
       const echo = { type: 'text', text: event.message.text };
-      client.replyMessage(event.replyToken, echo);
-      break
+      return client.replyMessage(event.replyToken, echo);
   }
-  return Promise.resolve({
-    code: 200,
-    message: 'OK'
-  })
 }
 
 // listen on port
