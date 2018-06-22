@@ -96,89 +96,26 @@ function handleEvent(event) {
           type: 'template',
           altText: 'ตำแหน่งงานที่ต้องการ',
           template: {
-            
-              "type": "bubble",
-              "header": {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "เลือกประเภทงานโดนใจ",
-                    "weight": "bold",
-                    "color": "#aaaaaa",
-                    "size": "lg"
-                  }
-                ]
+            type: 'bubble',
+            columns: [
+              {
+                title: 'เชฟ',
+                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
+                actions: [
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
+                ],
               },
-              "hero": {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
-                "size": "full",
-                "aspectRatio": "20:13",
-                "aspectMode": "cover",
-                "action": {
-                  "type": "uri",
-                  "uri": "http://linecorp.com/"
-                }
+              {
+                title: 'คนทอดหมู',
+                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                actions: [
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                ],
               },
-              "body": {
-                "type": "box",
-                "layout": "horizontal",
-                "spacing": "md",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "flex": 2,
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "วิศวกรรมคอมพิวเตอร์",
-                        "gravity": "top",
-                        "size": "md",
-                        "flex": 1,
-                        "action": {
-                          "type": "uri",
-                          "uri": "http://linecorp.com/"
-                        }
-                      },
-                      {
-                        "type": "separator"
-                      },
-                      {
-                        "type": "text",
-                        "text": "Hay fever goes wild",
-                        "gravity": "center",
-                        "size": "md",
-                        "flex": 2
-                      },
-                      {
-                        "type": "separator"
-                      },
-                      {
-                        "type": "text",
-                        "text": "LINE Pay Begins Barcode Payment Service",
-                        "gravity": "center",
-                        "size": "md",
-                        "flex": 2
-                      },
-                      {
-                        "type": "separator"
-                      },
-                      {
-                        "type": "text",
-                        "text": "LINE Adds LINE Wallet",
-                        "gravity": "bottom",
-                        "size": "md",
-                        "flex": 1
-                      }
-                    ]
-                  }
-                ]
-              
-            } 
-          }
+            ]
+          },
         }
       )
     default:
