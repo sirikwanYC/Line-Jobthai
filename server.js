@@ -71,7 +71,6 @@ function handleEvent(event) {
           },
         }
       )
-<<<<<<< HEAD
 
     case 'เลือกตำแหน่งงาน' : 
     const flexMessages = {
@@ -161,8 +160,6 @@ function handleEvent(event) {
       //   'type': 'text',
       //   'text': 'line://app/1589205932-WXbBEMXB'
       // })
-=======
->>>>>>> 03ea9236459574c349c999ee4ce0a8dbfc974324
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
