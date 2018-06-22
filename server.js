@@ -42,15 +42,14 @@ function handleEvent(event) {
   const findJobPatt = /สมัครงาน ตำแหน่ง/
   const myNamePatt = /ฉันชื่อ/
   const genderPatt = /ฉันเพศ/
+  const agePatt = /ฉันอายุ/
 
-  
-  // const caseWhatYourName = text.indexOf('คุณชื่ออะไร') !== -1: 
-  switch(text){
-    case findJobPatt.test('สมัครงาน ตำแหน่ง'):
+  if(text) {
+    if(findJobPatt.test('สมัครงาน ตำแหน่ง')) {
       return client.replyMessage(event.replyToken, 
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
-    case myNamePatt.test('ฉันชื่อ'):
+    } else if(myNamePatt.test('ฉันชื่อ')) {
       const genderTemplate = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -65,75 +64,79 @@ function handleEvent(event) {
         },
       }
       return client.replyMessage(event.replyToken, genderTemplate)
-
-    case genderPatt.test('ฉันเพศ'):
+    } else if(genderPatt.test('ฉันเพศ')) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณอายุเท่าไหร่' }
       )
-
-    case 'ฉันอายุ': // fix here
+    } else if (agePatt.test('ฉันอายุ')) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
       )
-
-    case 'ค้นหางาน' :
-      console.log('ทำแล้วไม่อยากย้ายทีมเลย')
-      break
-    case 'สายงาน บริการ':
-      return client.replyMessage(event.replyToken,
-        {
-          type: 'template',
-          altText: 'ตำแหน่งงานที่ต้องการ',
-          template: {
-            type: 'carousel',
-            columns: [
-              {
-                title: 'เชฟ',
-                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=เชฟ' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
-                ],
+    } else {
+      switch(text){
+        case 'ค้นหางาน' :
+          console.log('ทำแล้วไม่อยากย้ายทีมเลย')
+          break
+        case 'สายงาน บริการ':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'เชฟ',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=เชฟ' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
+                    ],
+                  },
+                  {
+                    title: 'คนทอดหมู',
+                    text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                    ],
+                  },
+                ]
               },
-              {
-                title: 'คนทอดหมู',
-                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
-                ],
-              },
-            ]
-          },
-        }
-      )
-    case 'เลือกตำแหน่งงาน':
-      return client.replyMessage(event.replyToken,
-        {
-          type: 'template',
-          altText: 'ตำแหน่งงานที่ต้องการ',
-          template: {
-            type: 'bubble',
-            header: {
-              type: "box",
-              layout: "horizontal",
-              content: [
-                {
-                  type: "text",
-                  text: "เลือกประเภทงานโดนใจ",
-                  weight: "bold",
-                  color: "#aaaaaa",
-                  size: "lg"
-                }
-              ]
             }
-          }
-        }
-      )
-    default:
-      const echo = { type: 'text', text: event.message.text };
-      return client.replyMessage(event.replyToken, echo);
+          )
+        case 'เลือกตำแหน่งงาน':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'bubble',
+                "header": {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "เลือกประเภทงานโดนใจ",
+                      "weight": "bold",
+                      "color": "#aaaaaa",
+                      "size": "lg"
+                    }
+                  ]
+                }
+              }
+            }
+          )
+        default:
+          const echo = { type: 'text', text: event.message.text };
+          return client.replyMessage(event.replyToken, echo);
+      }
+    }
   }
+  
+  // const caseWhatYourName = text.indexOf('คุณชื่ออะไร') !== -1: 
+  
 
   return client.replyMessage(event.replyToken, echo)
 }
