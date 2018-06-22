@@ -113,20 +113,18 @@ function handleEvent(event) {
           type: 'template',
           altText: 'ตำแหน่งงานที่ต้องการ',
           template: {
-            type: 'bubble',
-            header: {
-              type: "box",
-              layout: "horizontal",
-              content: [
-                {
-                  type: "text",
-                  text: "เลือกประเภทงานโดนใจ",
-                  weight: "bold",
-                  color: "#aaaaaa",
-                  size: "lg"
-                }
-              ]
-            }
+            type: 'carousel',
+            columns: [
+              {
+                title: 'IT',
+                actions: [
+                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
+                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
+                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
+                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' }
+                ]
+              }
+            ]
           }
         }
       )
