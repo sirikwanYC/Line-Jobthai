@@ -150,6 +150,61 @@ function handleEvent(event) {
                     uri: "http://linecorp.com/"
                   }
                 },
+                body: {
+                  type: "box",
+                  layout: "horizontal",
+                  "spacing": "md",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "flex": 2,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "วิศวกรรมคอมพิวเตอร์",
+                          "gravity": "top",
+                          "size": "md",
+                          "flex": 1,
+                          "action": {
+                            "type": "uri",
+                            "uri": "http://linecorp.com/"
+                          }
+                        },
+                        {
+                          "type": "separator"
+                        },
+                        {
+                          "type": "text",
+                          "text": "Hay fever goes wild",
+                          "gravity": "center",
+                          "size": "md",
+                          "flex": 2
+                        },
+                        {
+                          "type": "separator"
+                        },
+                        {
+                          "type": "text",
+                          "text": "LINE Pay Begins Barcode Payment Service",
+                          "gravity": "center",
+                          "size": "md",
+                          "flex": 2
+                        },
+                        {
+                          "type": "separator"
+                        },
+                        {
+                          "type": "text",
+                          "text": "LINE Adds LINE Wallet",
+                          "gravity": "bottom",
+                          "size": "md",
+                          "flex": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
               }
             }
           )
