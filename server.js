@@ -97,16 +97,16 @@ function handleEvent(event) {
           altText: 'ตำแหน่งงานที่ต้องการ',
           template: {
             type: 'bubble',
-            "header": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
+            header: {
+              type: "box",
+              layout: "horizontal",
+              content: [
                 {
-                  "type": "text",
-                  "text": "เลือกประเภทงานโดนใจ",
-                  "weight": "bold",
-                  "color": "#aaaaaa",
-                  "size": "lg"
+                  type: "text",
+                  text: "เลือกประเภทงานโดนใจ",
+                  weight: "bold",
+                  color: "#aaaaaa",
+                  size: "lg"
                 }
               ]
             }
