@@ -75,7 +75,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken,
         {
           "type": "imagemap",
-          "baseUrl": "https://example.com/bot/images/rm001",
+          // "baseUrl": "https://www.thinknet.co.th",
           "altText": "This is an imagemap",
           "baseSize": {
             "height": 1040,
@@ -84,7 +84,7 @@ function handleEvent(event) {
           "actions": [
             {
               "type": "uri",
-              "linkUri": "https://example.com/",
+              "linkUri": "https://gitlab.thinknet.co.th/uploads/system/group/avatar/9/logo.jpg",
               "area": {
                 "x": 0,
                 "y": 0,
