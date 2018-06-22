@@ -44,36 +44,8 @@ function handleEvent(event) {
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case 'สายงาน บริการ' :
-      return client.replyMessage(event.replyToken, 
-        {
-          type: 'template',
-          altText: 'Carousel alt text',
-          template: {
-            type: 'carousel',
-            columns: [
-              {
-                thumbnailImageUrl: 'http://images.all-free-download.com/images/graphicthumb/button_play_89677.jpg',
-                title: 'hoge',
-                text: 'fuga',
-                actions: [
-                  { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-                  { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-                ],
-              },
-              {
-                thumbnailImageUrl: 'http://images.all-free-download.com/images/graphicthumb/button_play_89677.jpg',
-                title: 'hoge',
-                text: 'fuga',
-                actions: [
-                  { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-                  { label: 'Say message', type: 'message', text: 'Rice=米' },
-                ],
-              },
-            ],
-          },
-        }
-      )
-      // return client.replyMessage(event.replyToken, {
+      const flex = { type: 'text', text: 'asdfg' }
+      return client.replyMessage(event.replyToken, flex)
       //   'type': 'text',
       //   'text': 'line://app/1589205932-WXbBEMXB'
       // })
