@@ -38,23 +38,40 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
+  const { text } = event.message
+  const findJobPatt = /สมัครงาน ตำแหน่ง/
+  const myNamePatt = /ฉันชื่อ/
+  const genderPatt = /ฉันเพศ/
 
-  switch(event.message.text){
-    case 'สมัครงาน ตำแหน่ง':
+  
+  // const caseWhatYourName = text.indexOf('คุณชื่ออะไร') !== -1: 
+  switch(text){
+    case findJobPatt.test('สมัครงาน ตำแหน่ง'):
       return client.replyMessage(event.replyToken, 
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
-    case 'ฉันชื่อ':
-      return client.replyMessage(event.replyToken,
-        { type: 'text', text: 'คุณเพศอะไร' }
-      )
+    case myNamePatt.test('ฉันชื่อ'):
+      const genderTemplate = {
+        type: 'template',
+        altText: 'Buttons alt text',
+        template: {
+          type: 'buttons',
+          title: "เพศ",
+          text: "กรุณาเลือกเพศ",
+          actions: [
+            { label: 'ชาย', type: 'message', text: 'ฉันเพศ ชาย' },
+            { label: 'หญิง', type: 'message', text: 'ฉันเพศ หญิง' }
+        ]
+        },
+      }
+      return client.replyMessage(event.replyToken, genderTemplate)
 
-    case 'ฉันเพศ':
+    case genderPatt.test('ฉันเพศ'):
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณอายุเท่าไหร่' }
       )
 
-    case 'ฉันอายุ':
+    case 'ฉันอายุ': // fix here
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
       )
@@ -74,7 +91,7 @@ function handleEvent(event) {
                 title: 'เชฟ',
                 text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
                 actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=เชฟ' },
                   { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
                 ],
               },
@@ -82,7 +99,7 @@ function handleEvent(event) {
                 title: 'คนทอดหมู',
                 text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
                 actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
                   { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
                 ],
               },
