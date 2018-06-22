@@ -39,8 +39,14 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  switch (event.message.text) {
-    case "ค้นหางาน":
+  switch(event.message.text){
+    case (event.message.text.indexOf('สมัครงาน ตำแหน่ง') !== -1) :
+      const message = { type: 'text', text: 'คุณชื่ออะไร' }
+      return client.replyMessage(event.replyToken, message)
+    case (event.message.text.indexOf('ฉันชื่อ ') != --1) :
+      const message = { type: 'text', text: 'คุณเพศอะไร' }
+      return client.replyMessage(event.replyToken, message)
+    case "ค้นหางาน" :
       console.log('ทำแล้วไม่อยากย้ายทีมเลย')
       break
     case 'สายงาน บริการ':
@@ -75,7 +81,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken,
         {
           "type": "imagemap",
-          "baseUrl": "https://www.thinknet.co.th",
+          "baseUrl": "https://example.com/bot/images/rm001",
           "altText": "This is an imagemap",
           "baseSize": {
             "height": 460,
