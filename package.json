@@ -1,0 +1,12 @@
+{
+  "name": "Line-Jobthai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sirikwanYC/Line-Jobthai.git",
+  "author": "NuntJW <nuntjw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@line/bot-sdk": "^6.1.0",
+    "express": "^4.16.3"
+  }
+}
