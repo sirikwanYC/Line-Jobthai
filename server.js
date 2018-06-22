@@ -89,7 +89,8 @@ function handleEvent(event) {
         case 'ค้นหางาน':
           console.log('ทำแล้วไม่อยากย้ายทีมเลย')
           break
-        case 'สายงาน บริการ' || 'สายงานที่แนะนำ':
+        case 'สายงานที่แนะนำ':
+        case 'สายงาน บริการ':
           return client.replyMessage(event.replyToken,
             {
               type: 'template',
@@ -121,7 +122,7 @@ function handleEvent(event) {
           return client.replyMessage(event.replyToken,
             {
               "type": "imagemap",
-              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg",
+              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg/1040",
               "altText": "This is an imagemap",
               "baseSize": {
                   "height": 1040,
