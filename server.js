@@ -71,66 +71,34 @@ function handleEvent(event) {
           },
         }
       )
-
-    case 'เลือกตำแหน่งงาน':
-      // const flexMessages = {
-      //   type: "bubble",
-      //   header: {
-      //     "type": "box",
-      //     "layout": "horizontal",
-      //     "contents": [
-      //       {
-      //         "type": "text",
-      //         "text": "เลือกประเภทงานโดนใจ",
-      //         "weight": "bold",
-      //         "color": "#aaaaaa",
-      //         "size": "lg"
-      //       }
-      //     ]
-      //   },
-      //   "hero": {
-      //     "type": "image",
-      //     "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
-      //     "size": "full",
-      //     "aspectRatio": "20:13",
-      //     "aspectMode": "cover",
-      //     "action": {
-      //       "type": "uri",
-      //       "uri": "http://linecorp.com/"
-      //     }
-      //   }
-      // }
-
-      const data = {
-        type: 'template',
-        altText: 'Buttons alt text',
-        template: {
-          type: 'carousel',
-          columns: [
-            {
-              title: 'เชฟ',
-              text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
-              actions: [
-                { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง เชฟ' },
-              ],
-            },
-            {
-              title: 'คนทอดหมู',
-              text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
-              actions: [
-                { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
-              ],
-            },
-          ]
-        },
-      }
-      return client.replyMessage(event.replyToken, data)
-      // return client.replyMessage(event.replyToken, {
-      //   'type': 'text',
-      //   'text': 'line://app/1589205932-WXbBEMXB'
-      // })
+    case 'เลือกตำแหน่งงาน' :
+      return client.replyMessage(event.replyToken, 
+        {
+          type: 'template',
+          altText: 'Buttons alt text',
+          template: {
+            type: 'carousel',
+            columns: [
+              {
+                title: 'เชฟ',
+                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
+                actions: [
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
+                ],
+              },
+              {
+                title: 'คนทอดหมู',
+                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                actions: [
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                ],
+              },
+            ]
+          },
+        }
+      )
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
