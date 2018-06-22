@@ -15,8 +15,14 @@
                 }
                 )
             applyNow = () => {
-                liff.sendMessages('สมัครงาน ตำแหน่ง เชฟ')
-                liff.closeWindow()
+                liff.sendMessages([
+                    {
+                        type: 'text',
+                        text: 'สมัครงาน ตำแหน่ง เชฟ'
+                    }
+                ]).then(() => {
+                    liff.closeWindow()
+                })
             }
         </script>
     </head>
