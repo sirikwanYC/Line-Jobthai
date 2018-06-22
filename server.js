@@ -253,7 +253,7 @@ function handleEvent(event) {
                 },
                 hero: {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
+                  url: "http://news.mthai.com/app/uploads/2016/08/aa6iba7hjeh65i8c86bbi.jpg",
                   size: "full",
                   aspectRatio: "20:13",
                   aspectMode: "cover",
