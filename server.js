@@ -94,7 +94,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken,
         {
           "type": "imagemap",
-          "baseUrl": "./logo.jpg",
+          "baseUrl": "http://www.g21.com.au/sites/default/files/styles/img_half/public/field/image/jobs_stylised_representation.jpg?itok=hulV4ZMu",
           "altText": "This is an imagemap",
           "baseSize": {
             "height": 460,
