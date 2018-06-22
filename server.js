@@ -49,18 +49,71 @@ function handleEvent(event) {
           type: 'template',
           altText: 'Buttons alt text',
           template: {
-            type: 'buttons',
-            title: 'My button sample',
-            text: 'Hello, my button',
-            actions: [
-              { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-              { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-              { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-              { label: 'Say message', type: 'message', text: 'Rice=米' },
-            ],
+            type: "carousel",
+            contents: [
+              {
+                type: "bubble",
+                body: {
+                  type: "box",
+                  layout: "horizontal",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                      wrap: true
+                    }
+                  ]
+                },
+                footer: {
+                  type: "box",
+                  layout: "horizontal",
+                  contents: [
+                    {
+                      type: "button",
+                      style: "primary",
+                      action: {
+                        type: "uri",
+                        label: "Go",
+                        uri: "line://app/1589205932-WXbBEMXB"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                type: "bubble",
+                body: {
+                  type: "box",
+                  layout: "horizontal",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Hello, World!",
+                      wrap: true
+                    }
+                  ]
+                },
+                footer: {
+                  type: "box",
+                  layout: "horizontal",
+                  contents: [
+                    {
+                      type: "button",
+                      style: "primary",
+                      action: {
+                        type: "uri",
+                        label: "Go",
+                        uri: "line://app/1589205932-WXbBEMXB"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           },
         }
       )
+<<<<<<< HEAD
 
     case 'เลือกตำแหน่งงาน' : 
     const flexMessages = {
@@ -150,123 +203,14 @@ function handleEvent(event) {
       //   'type': 'text',
       //   'text': 'line://app/1589205932-WXbBEMXB'
       // })
+=======
+>>>>>>> 03ea9236459574c349c999ee4ce0a8dbfc974324
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
   }
-  // switch(event.message.text){
-  //   case "ค้นหางาน" :
-  //     console.log('ทำแล้วไม่อยากย้ายทีมเลย')
-  //     break
-  //   case "สายงาน บริการ" :
-  //     // return client.replyMessage(event.replyToken, {
-  //     //   "type": "carousel",
-  //     //   "contents": [
-  //     //     {
-  //     //       "type": "bubble",
-  //     //       "body": {
-  //     //         "type": "box",
-  //     //         "layout": "vertical",
-  //     //         "contents": [
-  //     //           {
-  //     //             "type": "text",
-  //     //             "text": "เชฟ"
-  //     //           },
-  //     //           {
-  //     //             "type": "button",
-  //     //             "action": {
-  //     //               "type": "uri",
-  //     //               "label": "ดูรายละเอียด",
-  //     //               "uri": "line://app/1589205932-WXbBEMXB"
-  //     //             },
-  //     //             "style": "primary",
-  //     //             "color": "#0000ff"
-  //     //           }
-  //     //         ]
-  //     //       }
-  //     //     },
-  //     //     {
-  //     //       "type": "bubble",
-  //     //       "body": {
-  //     //         "type": "box",
-  //     //         "layout": "vertical",
-  //     //         "contents": [
-  //     //           {
-  //     //             "type": "text",
-  //     //             "text": "อาชีพอื่นๆ (ยังคลิกไม่ได้นะจ้ะ)"
-  //     //           }
-  //     //         ]
-  //     //       }
-  //     //     }
-  //     //   ]
-  //     // })
-  //     return client.replyMessage(event.replyToken, {
-  //       'type': 'text',
-  //       'text': 'line://app/1589205932-WXbBEMXB'
-  //     })
-  //   default:
-  //     const echo = { type: 'text', text: event.message.text };
-  //     return client.replyMessage(event.replyToken, echo);
-  // }
-
-  // use reply API
+  
   return client.replyMessage(event.replyToken, echo)
-  // switch(event.message.text){
-  //   case "ค้นหางาน" :
-  //     console.log('ทำแล้วไม่อยากย้ายทีมเลย')
-  //     break
-  //   case "สายงาน บริการ" :
-  //     client.replyMessage(event.replyToken, {
-  //       "type": "carousel",
-  //       "contents": [
-  //         {
-  //           "type": "bubble",
-  //           "body": {
-  //             "type": "box",
-  //             "layout": "vertical",
-  //             "contents": [
-  //               {
-  //                 "type": "text",
-  //                 "text": "เชฟ"
-  //               },
-  //               {
-  //                 "type": "button",
-  //                 "action": {
-  //                   "type": "uri",
-  //                   "label": "ดูรายละเอียด",
-  //                   "uri": "line://app/1589205932-WXbBEMXB"
-  //                 },
-  //                 "style": "primary",
-  //                 "color": "#0000ff"
-  //               }
-  //             ]
-  //           }
-  //         },
-  //         {
-  //           "type": "bubble",
-  //           "body": {
-  //             "type": "box",
-  //             "layout": "vertical",
-  //             "contents": [
-  //               {
-  //                 "type": "text",
-  //                 "text": "อาชีพอื่นๆ (ยังคลิกไม่ได้นะจ้ะ)"
-  //               }
-  //             ]
-  //           }
-  //         }
-  //       ]
-  //     })
-  //     break
-  //     // client.replyMessage(event.replyToken, {
-  //     //   'type': 'text',
-  //     //   'text': 'line://app/1589205932-WXbBEMXB'
-  //     // })
-  //   default:
-  //     const echo = { type: 'text', text: event.message.text };
-  //     client.replyMessage(event.replyToken, echo);
-  //     break
-  // }
 }
 
 // listen on port
