@@ -42,15 +42,14 @@ function handleEvent(event) {
   const findJobPatt = /สมัครงาน ตำแหน่ง/
   const myNamePatt = /ฉันชื่อ/
   const genderPatt = /ฉันเพศ/
+  const agePatt = /ฉันอายุ/
 
-  
-  // const caseWhatYourName = text.indexOf('คุณชื่ออะไร') !== -1: 
-  switch(text){
-    case findJobPatt.test('สมัครงาน ตำแหน่ง'):
-      return client.replyMessage(event.replyToken, 
+  if (text) {
+    if (findJobPatt.test('สมัครงาน ตำแหน่ง')) {
+      return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
-    case myNamePatt.test('ฉันชื่อ'):
+    } else if (myNamePatt.test('ฉันชื่อ')) {
       const genderTemplate = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -61,77 +60,94 @@ function handleEvent(event) {
           actions: [
             { label: 'ชาย', type: 'message', text: 'ฉันเพศ ชาย' },
             { label: 'หญิง', type: 'message', text: 'ฉันเพศ หญิง' }
-        ]
+          ]
         },
       }
       return client.replyMessage(event.replyToken, genderTemplate)
-
-    case genderPatt.test('ฉันเพศ'):
+    } else if (genderPatt.test('ฉันเพศ')) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณอายุเท่าไหร่' }
       )
-
-    case 'ฉันอายุ': // fix here
+    } else if (agePatt.test('ฉันอายุ')) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
       )
-
-    case 'ค้นหางาน' :
-      console.log('ทำแล้วไม่อยากย้ายทีมเลย')
-      break
-    case 'สายงาน บริการ':
-      return client.replyMessage(event.replyToken,
-        {
-          type: 'template',
-          altText: 'ตำแหน่งงานที่ต้องการ',
-          template: {
-            type: 'carousel',
-            columns: [
-              {
-                title: 'เชฟ',
-                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=เชฟ' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
-                ],
-              },
-              {
-                title: 'คนทอดหมู',
-                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
-                actions: [
-                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
-                  { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
-                ],
-              },
-            ]
-          },
-        }
-      )
-    case 'เลือกตำแหน่งงาน':
-      return client.replyMessage(event.replyToken,
-        {
-          type: 'template',
-          altText: 'ตำแหน่งงานที่ต้องการ',
-          template: {
-            type: 'carousel',
-            columns: [
-              {
-                title: 'IT',
-                actions: [
-                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
-                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
-                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' },
-                  { label: 'เลือก', type: 'message', text: 'เลือกตำแหน่ง IT' }
+    } else {
+      switch (text) {
+        case 'ค้นหางาน':
+          console.log('ทำแล้วไม่อยากย้ายทีมเลย')
+          break
+        case 'สายงาน บริการ':
+          return client.replyMessage(event.replyToken,
+            {
+              type: 'template',
+              altText: 'ตำแหน่งงานที่ต้องการ',
+              template: {
+                type: 'carousel',
+                columns: [
+                  {
+                    title: 'เชฟ',
+                    text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=เชฟ' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง เชฟ' },
+                    ],
+                  },
+                  {
+                    title: 'คนทอดหมู',
+                    text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
+                    actions: [
+                      { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB?career=คนทอดหมู' },
+                      { label: 'สมัครเลย', type: 'message', text: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
+                    ],
+                  },
                 ]
               }
-            ]
-          }
-        }
-      )
-    default:
-      const echo = { type: 'text', text: event.message.text };
-      return client.replyMessage(event.replyToken, echo);
+            },
+          )
+        case 'เลือกตำแหน่งงาน':
+          return client.replyMessage(event.replyToken,
+            {
+              "type": "imagemap",
+              "baseUrl": "https://example.com/bot/images/rm001",
+              "altText": "This is an imagemap",
+              "baseSize": {
+                  "height": 1040,
+                  "width": 1040
+              },
+              "actions": [
+                  {
+                      "type": "uri",
+                      "linkUri": "https://example.com/",
+                      "area": {
+                          "x": 0,
+                          "y": 0,
+                          "width": 520,
+                          "height": 1040
+                      }
+                  },
+                  {
+                      "type": "message",
+                      "text": "Hello",
+                      "area": {
+                          "x": 520,
+                          "y": 0,
+                          "width": 520,
+                          "height": 1040
+                      }
+                  }
+              ]
+            }
+          )
+        default:
+          const echo = { type: 'text', text: event.message.text };
+          return client.replyMessage(event.replyToken, echo);
+      }
+    }
   }
+
+  // const caseWhatYourName = text.indexOf('คุณชื่ออะไร') !== -1: 
+
 
   return client.replyMessage(event.replyToken, echo)
 }
@@ -140,4 +156,4 @@ function handleEvent(event) {
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
-});
+})
