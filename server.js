@@ -95,6 +95,10 @@ function handleEvent(event) {
       client.replyMessage(event.replyToken, echo);
       break
   }
+  return Promise.resolve({
+    code: 200,
+    message: 'OK'
+  })
 }
 
 // listen on port
