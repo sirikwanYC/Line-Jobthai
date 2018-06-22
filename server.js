@@ -64,8 +64,8 @@ function handleEvent(event) {
         },
       }
       return client.replyMessage(event.replyToken, genderTemplate)
-    } else if (genderPatt.test(text)) {
-      const genderSex = {
+    } else if(genderPatt.test(text)) {
+      const genderAge = {
         type: 'template',
         altText: 'Buttons alt text',
         template: {
@@ -73,14 +73,30 @@ function handleEvent(event) {
           title: "อายุ",
           text: "กรุณาเลือกช่วงอายุของคุณ",
           actions: [
-            { label: '18-30', type: 'message', text: 'ฉันอายุ 18-30' },
-            { label: '31-40', type: 'message', text: 'ฉันอายุ 31-40' },
-            { label: '41-50', type: 'message', text: 'ฉันอายุ 41-50' },
-            { label: '51-60', type: 'message', text: 'ฉันอายุ 51-60' }
-          ]
+            { label: '18-25', type: 'message', text: 'ฉันอายุ 18-25' },
+            { label: '26-30', type: 'message', text: 'ฉันอายุ 26-30' },
+            { label: '31-35', type: 'message', text: 'ฉันอายุ 31-35' },
+            { label: '36-40', type: 'message', text: 'ฉันอายุ 36-40' }
+        ]
         },
       }
-      return client.replyMessage(event.replyToken, genderSex)
+
+      const genderAge2 ={
+        type: 'template',
+        altText: 'Buttons alt text',
+        template: {
+          type: 'buttons',
+          title: "อายุ",
+          text: "กรุณาเลือกช่วงอายุของคุณ",
+          actions: [
+            { label: '41-45', type: 'message', text: 'ฉันอายุ 41-45' },
+            { label: '46-50', type: 'message', text: 'ฉันอายุ 46-50' },
+            { label: '51-55', type: 'message', text: 'ฉันอายุ 51-55' },
+            { label: '56-60', type: 'message', text: 'ฉันอายุ 56-60' }
+        ]
+        },
+      }
+      return client.replyMessage(event.replyToken, [genderAge,genderAge2])
     } else if (agePatt.test(text)) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
