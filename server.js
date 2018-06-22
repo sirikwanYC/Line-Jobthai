@@ -44,12 +44,12 @@ function handleEvent(event) {
   const genderPatt = /ฉันเพศ/
   const agePatt = /ฉันอายุ/
 
-  if (text) {
-    if (findJobPatt.test('สมัครงาน ตำแหน่ง')) {
-      return client.replyMessage(event.replyToken,
+  if(text) {
+    if(findJobPatt.test(text)) {
+      return client.replyMessage(event.replyToken, 
         { type: 'text', text: 'คุณชื่ออะไร' }
       )
-    } else if (myNamePatt.test('ฉันชื่อ')) {
+    } else if(myNamePatt.test(text)) {
       const genderTemplate = {
         type: 'template',
         altText: 'Buttons alt text',
@@ -64,11 +64,11 @@ function handleEvent(event) {
         },
       }
       return client.replyMessage(event.replyToken, genderTemplate)
-    } else if (genderPatt.test('ฉันเพศ')) {
+    } else if(genderPatt.test(text)) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'คุณอายุเท่าไหร่' }
       )
-    } else if (agePatt.test('ฉันอายุ')) {
+    } else if (agePatt.test(text)) {
       return client.replyMessage(event.replyToken,
         { type: 'text', text: 'ขอบคุณครับ' }
       )
