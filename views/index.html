@@ -4,6 +4,8 @@
             Jobthai Liff application
         </title>
         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
         <script>
             liff.init(data => {
@@ -25,12 +27,41 @@
                 })
             }
         </script>
+        <style>
+            body {
+                padding: 20px;
+            }
+        </style>
     </head>
     <body>
-        <h1>ข้อมูลตำแหน่ง : เชฟ</h1>
-        <div>
-            ทำอาหารเป็นก็พอแล้ว
-        </div>
-        <button onclick="applyNow()">สมัครเลย</button>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <h1>ข้อมูลตำแหน่ง : เชฟ <span class="badge badge-secondary">ใหม่</span></h1>
+        <table class="table table-striped table-dark">
+            <tr>
+                <td>
+                    เงินเดือน
+                </td>
+                <td>
+                    12000
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    รายละเอียด
+                </td>
+                <td>
+                    มีประสบการณ์ในการทำอาหารมาแล้วอย่างน้อย 10 ปี
+                </td>
+            </tr>
+        </table>
+        <button
+            type="button" 
+            onclick="applyNow()"
+            class="btn btn-primary"
+        >
+            สมัครเลย
+        </button>
     </body>
 </html>
