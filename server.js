@@ -40,7 +40,7 @@ function handleEvent(event) {
   }
   const { text } = event.message
   const findJobPatt = /สมัครงาน ตำแหน่ง/
-  const myNamePatt = /ฉันชื่อ/
+  const myNamePatt = /ฉันชื่อ|ชื่อ|นาย|นาง|นางสาว/ 
   const genderPatt = /ฉันเพศ/
   const agePatt = /ฉันอายุ/
 
@@ -73,9 +73,10 @@ function handleEvent(event) {
           title: "อายุ",
           text: "กรุณาเลือกช่วงอายุของคุณ",
           actions: [
-            { label: '18-25', type: 'message', text: 'ฉันอายุ 18-25' },
-            { label: '26-30', type: 'message', text: 'ฉันอายุ 26-30' },
-            { label: '31-35', type: 'message', text: 'ฉันอายุ 31-35' }
+            { label: '18-30', type: 'message', text: 'ฉันอายุ 18-30' },
+            { label: '31-40', type: 'message', text: 'ฉันอายุ 31-40' },
+            { label: '41-50', type: 'message', text: 'ฉันอายุ 41-50' },
+            { label: '51-60', type: 'message', text: 'ฉันอายุ 51-60' }
         ]
         },
       }
