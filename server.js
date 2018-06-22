@@ -71,6 +71,98 @@ function handleEvent(event) {
           },
         }
       )
+<<<<<<< HEAD
+
+    case 'เลือกตำแหน่งงาน' : 
+    const flexMessages = {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "เลือกประเภทงานโดนใจ",
+            "weight": "bold",
+            "color": "#aaaaaa",
+            "size": "lg"
+          }
+        ]
+      },
+      "hero": {
+        "type": "image",
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "http://linecorp.com/"
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 2,
+            "contents": [
+              {
+                "type": "text",
+                "text": "วิศวกรรมคอมพิวเตอร์",
+                "gravity": "top",
+                "size": "md",
+                "flex": 1,
+                "action": {
+                  "type": "uri",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "text",
+                "text": "Hay fever goes wild",
+                "gravity": "center",
+                "size": "md",
+                "flex": 2
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "text",
+                "text": "LINE Pay Begins Barcode Payment Service",
+                "gravity": "center",
+                "size": "md",
+                "flex": 2
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "text",
+                "text": "LINE Adds LINE Wallet",
+                "gravity": "bottom",
+                "size": "md",
+                "flex": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+      return client.replyMessage(event.replyToken, flexMessages)
+      // return client.replyMessage(event.replyToken, {
+      //   'type': 'text',
+      //   'text': 'line://app/1589205932-WXbBEMXB'
+      // })
+=======
+>>>>>>> 03ea9236459574c349c999ee4ce0a8dbfc974324
     default:
       const echo = { type: 'text', text: event.message.text };
       return client.replyMessage(event.replyToken, echo);
