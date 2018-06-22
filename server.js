@@ -74,29 +74,29 @@ function handleEvent(event) {
     case 'เลือกตำแหน่งงาน' :
       return client.replyMessage(event.replyToken, 
         {
-          type: "bubble",
-          header: {
-            type: "box",
-            layout: "horizontal",
-            contents: [
+          "type": "bubble",
+          "header": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
               {
-                type: "text",
-                text: "เลือกประเภทงานโดนใจ",
-                weight: "bold",
-                color: "#aaaaaa",
-                size: "lg"
+                "type": "text",
+                "text": "เลือกประเภทงานโดนใจ",
+                "weight": "bold",
+                "color": "#aaaaaa",
+                "size": "lg"
               }
             ]
           },
-          hero: {
-            type: "image",
-            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
-            size: "full",
-            aspectRatio: "20:13",
-            aspectMode: "cover",
-            action: {
-              type: "uri",
-              uri: "http://linecorp.com/"
+          "hero": {
+            "type": "image",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "action": {
+              "type": "uri",
+              "uri": "http://linecorp.com/"
             }
           }
         }
