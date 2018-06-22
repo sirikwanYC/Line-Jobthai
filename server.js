@@ -162,13 +162,13 @@ function handleEvent(event) {
                       "contents": [
                         {
                           "type": "text",
-                          "text": "วิศวกรรมคอมพิวเตอร์",
+                          "text": "IT",
                           "gravity": "top",
                           "size": "md",
                           "flex": 1,
                           "action": {
-                            "type": "uri",
-                            "uri": "http://linecorp.com/"
+                            "type": "text",
+                            "text": "สายงาน IT"
                           }
                         },
                         {
@@ -176,30 +176,42 @@ function handleEvent(event) {
                         },
                         {
                           "type": "text",
-                          "text": "Hay fever goes wild",
+                          "text": "Art",
                           "gravity": "center",
                           "size": "md",
-                          "flex": 2
+                          "flex": 2,
+                          "action": {
+                            "type": "text",
+                            "text": "สายงาน Art"
+                          }
                         },
                         {
                           "type": "separator"
                         },
                         {
                           "type": "text",
-                          "text": "LINE Pay Begins Barcode Payment Service",
+                          "text": "Science",
                           "gravity": "center",
                           "size": "md",
-                          "flex": 2
+                          "flex": 2,
+                          "action": {
+                            "type": "text",
+                            "text": "สายงาน Science"
+                          }
                         },
                         {
                           "type": "separator"
                         },
                         {
                           "type": "text",
-                          "text": "LINE Adds LINE Wallet",
+                          "text": "Engineer",
                           "gravity": "bottom",
                           "size": "md",
-                          "flex": 1
+                          "flex": 1,
+                          "action": {
+                            "type": "text",
+                            "text": "สายงาน Engineer"
+                          }
                         }
                       ]
                     }
