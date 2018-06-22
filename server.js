@@ -83,7 +83,7 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken,
         {
           "type": "imagemap",
-          "baseUrl": "https://example.com/bot/images/rm001",
+          "baseUrl": "https://gitlab.thinknet.co.th/uploads/system/group/avatar/9/logo.jpg",
           "altText": "This is an imagemap",
           "baseSize": {
             "height": 460,
