@@ -126,17 +126,16 @@ function handleEvent(event) {
               altText: 'This is flex',
               contents: {
                 type: 'bubble',
-                body: {
+                header: {
                   type: 'box',
                   layout: 'horizontal',
                   contents: [
                     {
-                      type: 'text',
-                      text: 'hello'
-                    },
-                    {
-                      type: 'text',
-                      text: 'hello'
+                      type: "text",
+                      text: "เลือกประเภทงานโดนใจ",
+                      weight: "bold",
+                      color: "#aaaaaa",
+                      size: "lg"
                     }
                   ]
                 }
