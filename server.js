@@ -52,7 +52,7 @@ function handleEvent(event) {
             type: 'carousel',
             columns: [
               {
-                thumbnailImageUrl: buttonsImageURL,
+                thumbnailImageUrl: 'http://images.all-free-download.com/images/graphicthumb/button_play_89677.jpg',
                 title: 'hoge',
                 text: 'fuga',
                 actions: [
@@ -61,7 +61,7 @@ function handleEvent(event) {
                 ],
               },
               {
-                thumbnailImageUrl: buttonsImageURL,
+                thumbnailImageUrl: 'http://images.all-free-download.com/images/graphicthumb/button_play_89677.jpg',
                 title: 'hoge',
                 text: 'fuga',
                 actions: [
