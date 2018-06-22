@@ -124,7 +124,7 @@ function handleEvent(event) {
           return client.replyMessage(event.replyToken,
             {
               "type": "imagemap",
-              "baseUrl": "http://www.ientertain.in/wp-content/uploads/2016/04/Big-Magic.png",
+              "baseUrl": "https://pbs.twimg.com/profile_images/494049099943903233/8Ky18G8W.jpeg",
               "altText": "This is an imagemap",
               "baseSize": {
                   "height": 1040,
