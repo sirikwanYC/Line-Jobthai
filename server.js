@@ -52,19 +52,19 @@ function handleEvent(event) {
             type: 'carousel',
             columns: [
               {
-                title: 'hoge',
-                text: 'fuga',
+                title: 'เชฟ',
+                text: 'โรงแรมหนองป่าหอย ต้องการยอดฝีมือนักทำอาหาร ด่วน! ตำแหน่งมีจำกัด',
                 actions: [
-                  { label: 'Go to line.me', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
-                  { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง เชฟ' },
                 ],
               },
               {
-                title: 'hoge',
-                text: 'fuga',
+                title: 'คนทอดหมู',
+                text: 'หมูปิ้งป้าน้อย ตำบลสุเทพ อ.เมือง จ.เชียงใหม่',
                 actions: [
-                  { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-                  { label: 'Say message', type: 'message', text: 'Rice=米' },
+                  { label: 'ดูรายละเอียด', type: 'uri', uri: 'line://app/1589205932-WXbBEMXB' },
+                  { label: 'สมัครเลย', type: 'message', data: 'สมัครงาน ตำแหน่ง คนทอดหมู' },
                 ],
               },
             ]
